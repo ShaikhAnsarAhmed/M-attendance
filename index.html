@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>Mobile Attendance App</title>
+
+    <!-- for socila media -->
+    <meta property="og:title" content="Mobile Attendance App" />
+    <meta
+      property="og:description"
+      content="Contact-less Time and Location based Attendance App, designed to keep your Team Safe and for Easier Attendance Management.
+      "
+    />
+    <!-- <meta property="og:url" content="https://thebigcisoshoot.cytix.io/" />
+    <meta property="og:image" content="/img/social-BG.png" /> -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Montserrat", sans-serif;
+      }
+      .space-font {
+        font-family: "Space Grotesk", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="w-full">
+    <div
+      class="bg-[url('/img/banner.jpg')] px-3 sm:px-0 h-auto sm:h-screen lg:h-screen w-[100%] bg-cover bg-center sm:bg-cover bg-no-repeat relative"
+    >
+      <div class="container mx-auto h-full pt-5">
+        <div class="flex items-center gap-x-2">
+          <img src="/img/Logo.png" alt="" class="w-14 sm:w-20 h-10 sm:h-14" />
+          <!-- <p class="text-[#007bff] font-semibold text-3xl">Attendance</p> -->
+        </div>
+
+        <div
+          class="relative grid grid-cols-1 sm:grid-cols-2 justify-between items-center pt-10 sm:pt-16"
+        >
+          <div class="flex flex-col">
+            <h2
+              class="text-left leading-normal text-black text-[30px] sm:text-[30px] lg:text-[30px] font-bold leading-none"
+            >
+              Effortless Mobile Attendance for Modern Workplaces
+              <span class="hidden sm:inline"><br /></span>
+            </h2>
+            <p class="my-5 leading-normal">
+              Safely manage attendance with our contact-less app, utilizing time
+              and location data. Streamline tracking for a smarter and secure
+              workforce.
+              <span class="hidden sm:inline"><br /></span>
+            </p>
+            <div class="my-5 flex flex-row gap-y-5 gap-x-5">
+              <div>
+                <a href="#targetApp">
+                  <button
+                    class="rounded-full shadow-xl bg-gradient-to-r from-[#6541c1] to-[#d43396]"
+                  >
+                    <span
+                      class="block text-white px-4 py-2 font-semibold rounded-full"
+                      >Download App</span
+                    >
+                  </button>
+                </a>
+              </div>
+              <div>
+                <button
+                  onclick="showForm()"
+                  class="p-0.5 group rounded-full shadow-xl bg-gradient-to-r from-[#6541c1] to-[#d43396]"
+                >
+                  <span
+                    class="block text-black group-hover:text-white px-4 py-2 font-semibold rounded-full bg-white ease-in duration-500 group-hover:bg-gradient-to-r from-[#6541c1] to-[#d43396]"
+                    >Discover more</span
+                  >
+                </button>
+              </div>
+            </div>
+          </div>
+          <div>
+            <img src="/img/Banner-mobile1.png" alt="" class="w-[700px]" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- counter -->
+    <div
+      id="triggerSection"
+      class="container mx-auto px-3 pb-5 sm:px-0 my-10 border-b-2 border-gray-200"
+    >
+      <div class="grid grid-cols-2 sm:grid-cols-4 py-2 sm:py-5">
+        <div class="flex items-end">
+          <p
+            id="users"
+            class="text-3xl sm:text-5xl bg-gradient-to-r from-[#6541c1] to-[#d43396] inline-block text-transparent bg-clip-text"
+          >
+            1
+          </p>
+          <p>Users</p>
+        </div>
+        <div class="flex items-end">
+          <p
+            id="download"
+            class="text-3xl sm:text-5xl bg-gradient-to-r from-[#6541c1] to-[#d43396] inline-block text-transparent bg-clip-text"
+          ></p>
+          <p
+            class="text-3xl sm:text-5xl bg-gradient-to-r from-[#6541c1] to-[#d43396] inline-block text-transparent bg-clip-text"
+          >
+            +
+          </p>
+          <p>Download</p>
+        </div>
+        <div class="flex items-end">
+          <p
+            id="likes"
+            class="text-3xl sm:text-5xl bg-gradient-to-r from-[#6541c1] to-[#d43396] inline-block text-transparent bg-clip-text"
+          ></p>
+          <p>Clients</p>
+        </div>
+        <div class="flex items-end">
+          <p
+            id="rating"
+            class="text-3xl sm:text-5xl bg-gradient-to-r from-[#6541c1] to-[#d43396] inline-block text-transparent bg-clip-text"
+          >
+            4.2
+          </p>
+          <p>Rating</p>
+        </div>
+      </div>
+    </div>
+    <!-- Feature -->
+    <div class="container mx-auto px-3 sm:px-0 py-5 sm:py-8">
+      <h2
+        class="pt-6 sm:pt-12 text-center leading-normal text-black text-[20px] sm:text-[40px] lg:text-[40px] font-bold leading-none"
+      >
+        Remarkable App Features
+      </h2>
+      <p
+        class="my-2 px-2 sm:px-5 sm:my-5 leading-normal text-center pb-2 sm:pb-5"
+      >
+        M-Attendance offers real-time attendance tracking, streamlining the
+        process with its efficient and time-saving features. The app
+        systematically collects attendance data, generating detailed reports on
+        leave days and holidays for your convenience. With a user-friendly
+        interface accessible on both mobile and desktop, it effortlessly
+        simplifies the often cumbersome task of attendance management.
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-4 gap-5">
+        <div class="group mb-3">
+          <div class="flex flex-col items-center bg-white relative h-64">
+            <img src="/img/wifi.png" alt="" class="w-16 h-16" />
+            <h3 class="my-3 font-semibold text-xl">WiFi Attendance</h3>
+            <p class="my-3 text-center">
+              Effortlessly track staff attendance and locations through WiFi
+              connectivity. Save time, streamline payroll, and enhance
+              efficiency.
+            </p>
+            <div
+              class="absolute bottom-0 h-1 transition duration-1000 ease-in-out w-full group-hover:bg-gradient-to-r from-[#6541c1] to-[#d43396]"
+            ></div>
+          </div>
+        </div>
+        <div class="group mb-3">
+          <div class="flex flex-col items-center bg-white relative h-64">
+            <img src="/img/gps.png" alt="" class="w-16 h-16" />
+            <h3 class="my-3 font-semibold text-xl">GPS Attendance</h3>
+            <p class="my-3 text-center">
+              Enable attendance tracking effortlessly with GPS-enabled phones.
+              Capture time, date, and location seamlessly—cost-effective,
+              efficient, and user-friendly.
+            </p>
+            <div
+              class="absolute bottom-0 h-1 transition duration-1000 ease-in-out w-full group-hover:bg-gradient-to-r from-[#6541c1] to-[#d43396]"
+            ></div>
+          </div>
+        </div>
+        <div class="group mb-3">
+          <div class="flex flex-col items-center bg-white relative h-64">
+            <img src="/img/qr-code.png" alt="" class="w-16 h-16" />
+            <h3 class="my-3 font-semibold text-xl">QR Code Attendance</h3>
+            <p class="my-3 text-center">
+              Mark attendance by scanning your allocated QR code, whether on
+              your own phone or the admin's, for quick and convenient tracking.
+            </p>
+            <div
+              class="absolute bottom-0 h-1 transition place-self-end duration-1000 ease-in-out w-full group-hover:bg-gradient-to-r from-[#6541c1] to-[#d43396]"
+            ></div>
+          </div>
+        </div>
+        <div class="group mb-3">
+          <div class="flex flex-col items-center bg-white relative h-64">
+            <img src="/img/selfie.png" alt="" class="w-16 h-16" />
+            <h3 class="my-3 font-semibold text-xl">Selfie Mode</h3>
+            <p class="my-3 text-center">
+              Just take a selfie and the attendance is done. The Geo-location
+              that it provides adds authenticity to the attendance.
+            </p>
+            <div
+              class="absolute bottom-0 h-1 transition place-self-end duration-1000 ease-in-out w-full group-hover:bg-gradient-to-r from-[#6541c1] to-[#d43396]"
+            ></div>
+          </div>
+        </div>
+        <div class="group mb-3">
+          <div class="flex flex-col items-center bg-white relative h-64">
+            <img src="/img/report.png" alt="" class="w-16 h-16" />
+            <h3 class="my-3 font-semibold text-xl">Accurate Report</h3>
+            <p class="my-3 text-center">
+              Reduce data-entry time. Generate accurate monthly reports. Export
+              to Excel or download in the form of PDF.
+            </p>
+            <div
+              class="absolute bottom-0 h-1 transition place-self-end duration-1000 ease-in-out w-full group-hover:bg-gradient-to-r from-[#6541c1] to-[#d43396]"
+            ></div>
+          </div>
+        </div>
+        <div class="group mb-3">
+          <div class="flex flex-col items-center bg-white relative h-64">
+            <img src="/img/access.png" alt="" class="w-16 h-16" />
+            <h3 class="my-3 font-semibold text-xl">Works Everywhere</h3>
+            <p class="my-3 text-center">
+              Access it from anywhere (android devices, tabs, desktop) and keep
+              track of the attendance at all times.
+            </p>
+            <div
+              class="absolute bottom-0 h-1 transition place-self-end duration-1000 ease-in-out w-full group-hover:bg-gradient-to-r from-[#6541c1] to-[#d43396]"
+            ></div>
+          </div>
+        </div>
+        <div class="group mb-3">
+          <div class="flex flex-col items-center bg-white relative h-64">
+            <img src="/img/geo.png" alt="" class="w-16 h-16" />
+            <h3 class="my-3 font-semibold text-xl">Geo-fencing</h3>
+            <p class="my-3 text-center">
+              Geo-fencing ensures remote users stay accountable by tracking
+              attendance and location, preventing misuse of the time and
+              attendance system.
+            </p>
+            <div
+              class="absolute bottom-0 h-1 transition place-self-end duration-1000 ease-in-out w-full group-hover:bg-gradient-to-r from-[#6541c1] to-[#d43396]"
+            ></div>
+          </div>
+        </div>
+        <div class="group mb-3">
+          <div class="flex flex-col items-center bg-white relative h-64">
+            <img src="/img/biometric.png" alt="" class="w-16 h-16" />
+            <h3 class="my-3 font-semibold text-xl">Biometric Attendance</h3>
+            <p class="my-3 text-center">
+              Marking attendance using fingerprint authentication through a
+              supported external fingerprint scanner.
+            </p>
+            <div
+              class="absolute bottom-0 h-1 transition place-self-end duration-1000 ease-in-out w-full group-hover:bg-gradient-to-r from-[#6541c1] to-[#d43396]"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 justify-between"></div>
+    </div>
+    <!-- How does this App Work? -->
+    <div class="container mx-auto px-3 sm:px-0 py-5 sm:py-10">
+      <h2
+        class="py-8 text-center leading-normal text-black text-[22px] sm:text-[40px] lg:text-[40px] font-bold leading-none"
+      >
+        How does this App Work?
+      </h2>
+      <div class="flex sm:flex-row flex-col items-center w-full">
+        <div class="sm:w-1/2">
+          <img
+            src="/img/step-back.png"
+            alt=""
+            class="my-auto h-[300px] w-[300px] sm:h-auto sm:w-auto"
+          />
+        </div>
+        <section class="items-center lg:h-screen font-poppins">
+          <div
+            class="justify-center max-w-6xl px-4 py-4 mx-auto lg:py-8 md:px-6"
+          >
+            <div class="w-full mx-auto lg:max-w-3xl">
+              <!-- first step -->
+              <div class="relative flex justify-between">
+                <div class="flex flex-col items-center w-10 mr-4 md:w-24">
+                  <div>
+                    <!-- left side rounded icon -->
+                    <div
+                      class="p-0.5 group hover:shadow-xl rounded-full bg-gradient-to-r from-[#6541c1] to-[#d43396]"
+                    >
+                      <span
+                        class="p-2 block text-black font-semibold rounded-full bg-white hover:bg-gradient-to-r from-[#6541c1] to-[#d43396] ease-in duration-500"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="w-10 h-10 stroke-[#6541c1] group-hover:stroke-white"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                  <!-- left side vertical line -->
+                  <div
+                    class="w-[2px] h-full bg-gradient-to-r from-[#6541c1] to-[#d43396]"
+                  ></div>
+                </div>
+                <!-- right side data -->
+                <div
+                  class="relative flex-1 mb-8 sm:mb-16 bg-white rounded shadow md:mb-8 dark:bg-gray-900"
+                >
+                  <div
+                    class="absolute inline-block w-4 overflow-hidden -translate-y-1/2 top-7 -left-4"
+                  >
+                    <div
+                      class="h-10 origin-top-right transform -rotate-45 bg-white dark:bg-gray-900 drop-shadow-lg"
+                    ></div>
+                  </div>
+                  <div class="relative z-20 p-3 sm:p-6">
+                    <p class="mb-2 text-xl font-bold text-gray-600">
+                      Download App
+                    </p>
+                    <p class="text-gray-700 dark:text-gray-500">
+                      Unlock seamless convenience with our Download App,
+                      providing instant access to a world of features at your
+                      fingertips.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- second step -->
+              <div class="relative flex justify-between">
+                <div class="flex flex-col items-center w-10 mr-4 md:w-24">
+                  <div>
+                    <!-- left side rounded icon -->
+                    <div
+                      class="p-0.5 group hover:shadow-xl rounded-full bg-gradient-to-r from-[#6541c1] to-[#d43396]"
+                    >
+                      <span
+                        class="p-2 block text-black font-semibold rounded-full bg-white hover:bg-gradient-to-r from-[#6541c1] to-[#d43396] ease-in duration-500"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="w-10 h-10 stroke-[#6541c1] group-hover:stroke-white"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                  <!-- left side vertical line -->
+                  <div
+                    class="w-[2px] h-full bg-gradient-to-r from-[#6541c1] to-[#d43396]"
+                  ></div>
+                </div>
+                <!-- right side data -->
+                <div
+                  class="relative flex-1 mb-16 bg-white rounded shadow md:mb-8 dark:bg-gray-900"
+                >
+                  <div
+                    class="absolute inline-block w-4 overflow-hidden -translate-y-1/2 top-7 -left-4"
+                  >
+                    <div
+                      class="h-10 origin-top-right transform -rotate-45 bg-white dark:bg-gray-900 drop-shadow-lg"
+                    ></div>
+                  </div>
+                  <div class="relative z-20 p-6">
+                    <p
+                      class="mb-2 text-xl font-bold text-gray-600 dark:text-gray-400"
+                    >
+                      User Login
+                    </p>
+                    <p class="text-gray-700 dark:text-gray-500">
+                      Experience quick and secure access with our User Login,
+                      ensuring hassle-free entry to personalized features.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- third step -->
+              <div id="targetApp" class="relative flex justify-between">
+                <div class="flex flex-col items-center w-10 mr-4 md:w-24">
+                  <div>
+                    <!-- left side rounded icon -->
+                    <div
+                      class="p-0.5 group hover:shadow-xl rounded-full bg-gradient-to-r from-[#6541c1] to-[#d43396]"
+                    >
+                      <span
+                        class="p-2 block text-black font-semibold rounded-full bg-white hover:bg-gradient-to-r from-[#6541c1] to-[#d43396] ease-in duration-500"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="w-10 h-10 stroke-[#6541c1] group-hover:stroke-white"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                  <!-- left side vertical line -->
+                  <!-- <div
+                    class="w-[2px] h-full bg-gradient-to-r from-[#6541c1] to-[#d43396]"
+                  ></div> -->
+                </div>
+                <!-- right side data -->
+                <div
+                  class="relative flex-1 mb-16 bg-white rounded shadow md:mb-8 dark:bg-gray-900"
+                >
+                  <div
+                    class="absolute inline-block w-4 overflow-hidden -translate-y-1/2 top-7 -left-4"
+                  >
+                    <div
+                      class="h-10 origin-top-right transform -rotate-45 bg-white dark:bg-gray-900 drop-shadow-lg"
+                    ></div>
+                  </div>
+                  <div class="relative z-20 p-6">
+                    <p
+                      class="mb-2 text-xl font-bold text-gray-600 dark:text-gray-400"
+                    >
+                      Enjoy This App
+                    </p>
+                    <p class="text-gray-700 dark:text-gray-500">
+                      Indulge in the ultimate experience with our App, offering
+                      a delightful blend of functionality and user-friendly
+                      features.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex flex-col sm:flex-row items-center justify-center gap-y-5 sm:gap-x-5"
+          >
+            <div>
+              <a
+                href="https://apps.apple.com/bn/app/m-attendance/id6443842046"
+                target="_blank"
+              >
+                <button
+                  class="rounded-full px-8 group shadow-xl bg-gradient-to-r from-[#6541c1] to-[#d43396]"
+                >
+                  <div class="flex justify-between items-center py-2">
+                    <img src="/img/appleWhite.svg" alt="" class="w-8 h-8" />
+                    <div class="flex-col items-start pl-4 leading-tight">
+                      <p class="text-white text-sm font-semibold">
+                        Available On
+                      </p>
+                      <p class="text-white font-semibold">APP STORE</p>
+                    </div>
+                  </div>
+                </button>
+              </a>
+            </div>
+            <div>
+              <a
+                href="https://play.google.com/store/apps/details?id=com.attendance.mokshasolutions"
+                target="_blank"
+              >
+                <button
+                  class="rounded-full group p-0.5 shadow-xl bg-gradient-to-r from-[#6541c1] to-[#d43396]"
+                >
+                  <div
+                    class="px-5 sm:px-8 py-1.5 flex justify-between items-center text-black hover:text-white rounded-full bg-white ease-in duration-500 hover:bg-gradient-to-r from-[#6541c1] to-[#d43396]"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      viewBox="0,0,256,256"
+                      width="50px"
+                      height="50px"
+                      class="group-hover:hidden block w-8 h-8"
+                    >
+                      <g
+                        fill="#6541c1"
+                        fill-rule="nonzero"
+                        stroke="none"
+                        stroke-width="1"
+                        stroke-linecap="butt"
+                        stroke-linejoin="miter"
+                        stroke-miterlimit="10"
+                        stroke-dasharray=""
+                        stroke-dashoffset="0"
+                        font-family="none"
+                        font-weight="none"
+                        font-size="none"
+                        text-anchor="none"
+                        style="mix-blend-mode: normal"
+                      >
+                        <g transform="scale(5.12,5.12)">
+                          <path
+                            d="M7.125,2l21.65625,21.5l5.9375,-5.9375l-26.25,-15.15625c-0.4375,-0.25391 -0.90625,-0.39453 -1.34375,-0.40625zM5.3125,3c-0.19531,0.34766 -0.3125,0.75781 -0.3125,1.21875v41.78125c0,0.33594 0.07031,0.63672 0.1875,0.90625l22.15625,-22zM36.53125,18.59375l-6.34375,6.3125l6.34375,6.28125l7.75,-4.4375c1.10156,-0.63672 1.25781,-1.44531 1.25,-1.875c-0.01172,-0.71094 -0.46094,-1.375 -1.21875,-1.78125c-0.66016,-0.35547 -5.5625,-3.21094 -7.78125,-4.5zM28.78125,26.3125l-21.84375,21.65625c0.36328,-0.01953 0.75781,-0.09766 1.125,-0.3125c0.85547,-0.49609 18.15625,-10.5 18.15625,-10.5l8.53125,-4.90625z"
+                          ></path>
+                        </g>
+                      </g>
+                    </svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      viewBox="0,0,256,256"
+                      width="50px"
+                      height="50px"
+                      class="group-hover:block hidden w-8 h-8"
+                    >
+                      <g
+                        fill="#ffffff"
+                        fill-rule="nonzero"
+                        stroke="none"
+                        stroke-width="1"
+                        stroke-linecap="butt"
+                        stroke-linejoin="miter"
+                        stroke-miterlimit="10"
+                        stroke-dasharray=""
+                        stroke-dashoffset="0"
+                        font-family="none"
+                        font-weight="none"
+                        font-size="none"
+                        text-anchor="none"
+                        style="mix-blend-mode: normal"
+                      >
+                        <g transform="scale(5.12,5.12)">
+                          <path
+                            d="M7.125,2l21.65625,21.5l5.9375,-5.9375l-26.25,-15.15625c-0.4375,-0.25391 -0.90625,-0.39453 -1.34375,-0.40625zM5.3125,3c-0.19531,0.34766 -0.3125,0.75781 -0.3125,1.21875v41.78125c0,0.33594 0.07031,0.63672 0.1875,0.90625l22.15625,-22zM36.53125,18.59375l-6.34375,6.3125l6.34375,6.28125l7.75,-4.4375c1.10156,-0.63672 1.25781,-1.44531 1.25,-1.875c-0.01172,-0.71094 -0.46094,-1.375 -1.21875,-1.78125c-0.66016,-0.35547 -5.5625,-3.21094 -7.78125,-4.5zM28.78125,26.3125l-21.84375,21.65625c0.36328,-0.01953 0.75781,-0.09766 1.125,-0.3125c0.85547,-0.49609 18.15625,-10.5 18.15625,-10.5l8.53125,-4.90625z"
+                          ></path>
+                        </g>
+                      </g>
+                    </svg>
+                    <div class="flex-col items-start pl-4 leading-tight">
+                      <p
+                        class="text-black text-left group-hover:text-white text-sm font-semibold"
+                      >
+                        Available On
+                      </p>
+                      <p
+                        class="text-black text-left group-hover:text-white font-semibold"
+                      >
+                        GOOGLE PLAY
+                      </p>
+                    </div>
+                  </div>
+                </button>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <!-- Easy to manage data -->
+    <div class="container mx-auto px-3 sm:px-0 my-5 sm:my-10">
+      <div class="grid grid-cols-1 sm:grid-cols-2 py-5 gap-x-10">
+        <div>
+          <img src="/img/easy.png" alt="" class="w-16 h-16" />
+          <h2
+            class="py-5 text-left leading-normal text-black text-[20px] sm:text-[40px] lg:text-[40px] font-bold leading-none"
+          >
+            Detailed Reports and Analytics
+          </h2>
+          <p class="my-3 text-left">
+            Effortlessly manage payroll with detailed analytics and reports,
+            eliminating the need for manual reconciliation and ensuring
+            error-free, final payroll-ready documentation.<br />
+            Access daily and monthly reports directly from the app in a
+            customizable format of your preference
+          </p>
+        </div>
+        <img src="/img/Dashboard.jpeg" alt="" class="h-[500px]" />
+      </div>
+    </div>
+    <!-- Responsive app -->
+    <div class="container mx-auto px-3 sm:px-0 pt-10">
+      <div class="grid grid-cols-1 sm:grid-cols-2 pt-5 gap-x-10">
+        <img src="/img/responsive.png" alt="" class="" />
+        <div class="">
+          <img src="/img/multiple-devices.png" alt="" class="w-16 h-16" />
+          <h2
+            class="py-5 text-left leading-normal text-black text-[20px] sm:text-[40px] lg:text-[40px] font-bold leading-none"
+          >
+            Make Data-driven Decisions
+          </h2>
+          <p class="my-3 text-left">
+            Analyze the various aspects of employee time tracking with ease to
+            generate reports. Everything at a single place. With interactive
+            dashboard views, employee database, M-Attendance saves costs for
+            businesses.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- footer -->
+    <div
+      class="px-3 sm:px-0 bg-cover bg-center sm:bg-cover bg-no-repeat relative pb-5"
+    >
+      <div class="">
+        <h2
+          class="pt-5 text-center leading-normal text-black text-[20px] sm:text-[40px] lg:text-[40px] font-bold leading-none"
+        >
+          Get in Reasonable Price
+        </h2>
+        <p class="my-3 text-center">
+          No matter what the size of your company or the extent of your HR
+          needs,<br />
+          M-Attendance has a plan that's just right for you.
+        </p>
+      </div>
+      <div
+        class="rounded-full max-w-5xl mx-auto shadow-xl bg-gradient-to-r from-[#6541c1] to-[#d43396] py-5 h-24 sm:h-24"
+      >
+        <div
+          class="w-11/12 mx-auto grid grid-cols-1 sm:grid-cols-2 items-center justify-between"
+        >
+          <div>
+            <h2
+              class="text-center text-white leading-normal text-black text-[16px] sm:text-[20px] lg:text-[20px] font-semibold leading-none"
+            >
+              Your Trusted Partner for Simplified Attendance Management
+            </h2>
+          </div>
+          <div class="mx-auto sm:ml-auto">
+            <button
+              onclick="showForm()"
+              class="p-0.5 rounded-full Newgroup shadow-xl bg-gradient-to-r from-[#6541c1] to-[#d43396]"
+            >
+              <span
+                class="block text-white px-4 py-2 font-semibold rounded-full ease-in duration-500 Newgroup-hover:bg-black bg-gradient-to-r from-[#6541c1] to-[#d43396]"
+                >Connect Now</span
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- form -->
+    <!-- from model  -->
+    <div class="container mx-auto">
+      <div
+        class="wrapper overflow-auto fixed inset-0 pt-4 w-screen bg-black bg-opacity-25 backdrop-blur-sm flex justify-center items-center p-1 sm:p-10 z-40"
+      >
+        <div
+          class="relative mx-2 sm:mx-4 overflow-hidden text-left transition-all transform bg-white rounded-lg shadow-xl sm:my-8 sm:max-w-lg sm:w-full p-5"
+        >
+          <div class="flex justify-end">
+            <button
+              onclick="hideForm()"
+              class="bg-transparent border border-transparent"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18 18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+          <h1 class="font-semibold text-center text-lg lg:text-xl">
+            Fill Inquiry Form
+          </h1>
+          <form id="myForm" class="px-3 sm:px-0">
+            <div class="w-full">
+              <div class="grid grid-cols-1 gap-4 m-auto pt-5">
+                <div class="relative z-0 col-span-2">
+                  <input
+                    maxlength="40"
+                    name="full_name"
+                    size="20"
+                    type="text"
+                    id="full_name"
+                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-[#6541c1] peer"
+                    placeholder=""
+                    required
+                  />
+                  <label
+                    for="full_name"
+                    class="absolute text-sm text-[#020E1E] duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#020E1E] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                    >Full Name<sup class="text-red-600">*</sup></label
+                  >
+                </div>
+                <div class="relative z-0 col-span-2">
+                  <input
+                    type="text"
+                    maxlength="80"
+                    name="email"
+                    size="20"
+                    id="email"
+                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-[#6541c1] peer"
+                    placeholder=""
+                    required
+                  />
+                  <label
+                    for="email"
+                    class="absolute text-sm text-[#020E1E] duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#020E1E] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                    >Email<sup class="text-red-600">*</sup></label
+                  >
+                </div>
+                <div class="relative z-0 col-span-2">
+                  <input
+                    type="number"
+                    id="mobile_no"
+                    maxlength="40"
+                    name="mobile_no"
+                    size="20"
+                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-[#6541c1] peer"
+                    placeholder=""
+                    required
+                  />
+                  <label
+                    for="mobile_no"
+                    class="absolute text-sm text-[#020E1E] duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#020E1E] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                    >Mobile <sup class="text-red-600">*</sup></label
+                  >
+                </div>
+                <div class="relative z-0 col-span-2">
+                  <textarea
+                    name="message"
+                    id="message"
+                    class="w-full min-h-[100px] text-sm font-normal bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-[#6541c1]"
+                    placeholder="Your message"
+                  ></textarea>
+                </div>
+
+                <div class="flex flex-col justify-center items-center">
+                  <div
+                    id="thankYouMessage"
+                    class="hidden my-4 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative"
+                  >
+                    <strong class="font-bold">Thank you!</strong> Your form has
+                    been submitted successfully.
+                  </div>
+                  <button
+                    type="submit"
+                    class="btn relative rounded px-5 py-2.5 overflow-hidden group relative bg-gradient-to-r from-[#6541c1] to-[#d43396] transition-all ease-out duration-300 text-white border border-white rounded-full cursor-pointer"
+                  >
+                    <span
+                      class="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"
+                    ></span>
+                    <span class="relative semibold">Submit</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- </div> -->
+      </div>
+    </div>
+
+    <!-- script -->
+    <script src="/script.js"></script>
+    <!-- form script -->
+    <script type="text/javascript">
+      function showForm() {
+        var formClass = document.querySelector(".wrapper");
+        formClass.classList.remove("!hidden");
+      }
+
+      function hideForm() {
+        var formClass = document.querySelector(".wrapper");
+        formClass.classList.add("!hidden");
+      }
+    </script>
+
+    <!-- email.js  -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"
+    ></script>
+
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("BEBsElio5CloP91I3");
+      })();
+    </script>
+
+    <script>
+      // listen to the form submission
+      document
+        .getElementById("myForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const serviceID = "service_rib2d94";
+          const templateID = "template_a49n3as";
+
+          // send the email here
+          emailjs.sendForm(serviceID, templateID, this).then(
+            (response) => {
+              var form = document.getElementById("myForm");
+              var thankYouMessage = document.getElementById("thankYouMessage");
+              form.reset();
+              thankYouMessage.style.display = "block";
+            },
+            (error) => {
+              // console.log("FAILED...", error);
+              alert("FAILED...");
+            }
+          );
+        });
+    </script>
+    <!-- end email.js  -->
+
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function () {
+        // Set the target number
+        const targetNumberOne = 3000;
+        const targetNumberTwo = 1000;
+        const targetNumberThree = 200;
+        // const targetNumberFour = 4.2;
+
+        // Get the counter element
+        const counterElementOne = document.getElementById("users");
+        const counterElementTwo = document.getElementById("download");
+        const counterElementThree = document.getElementById("likes");
+        // const counterElementFour = document.getElementById("rating");
+
+        // Create an intersection observer
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              // Start counting up when the trigger section is in view
+              countUpOne(100);
+              countUpTwo(100);
+              countUpThree(10);
+              // countUpFour(0.2);
+              observer.unobserve(entry.target);
+            }
+          });
+        });
+
+        // Observe the trigger section
+        observer.observe(document.getElementById("triggerSection"));
+
+        // Function to count up
+        function countUpOne(currentNumber) {
+          if (currentNumber <= targetNumberOne) {
+            counterElementOne.textContent = currentNumber;
+            setTimeout(function () {
+              countUpOne(currentNumber + 10);
+            }, 10);
+          }
+        }
+        function countUpTwo(currentNumber) {
+          if (currentNumber <= targetNumberTwo) {
+            counterElementTwo.textContent = currentNumber;
+            setTimeout(function () {
+              countUpTwo(currentNumber + 10);
+            }, 10);
+          }
+        }
+        function countUpThree(currentNumber) {
+          if (currentNumber <= targetNumberThree) {
+            counterElementThree.textContent = currentNumber;
+            setTimeout(function () {
+              countUpThree(currentNumber + 1);
+            }, 10);
+          }
+        }
+        // function countUpFour(currentNumber) {
+        //   if (currentNumber <= targetNumberFour) {
+        //     counterElementFour.textContent = currentNumber;
+        //     setTimeout(function () {
+        //       countUpFour(currentNumber + 0.2);
+        //     }, 10);
+        //   }
+        // }
+      });
+    </script>
+  </body>
+</html>
