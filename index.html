@@ -760,12 +760,22 @@
                   >
                 </div>
                 <div class="relative z-0 col-span-2">
-                  <textarea
-                    name="message"
-                    id="message"
-                    class="w-full min-h-[100px] text-sm font-normal bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-[#6541c1]"
-                    placeholder="Your message"
-                  ></textarea>
+                  <input
+                    type="number"
+                    id="employees"
+                    maxlength="40"
+                    name="employees"
+                    size="20"
+                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-[#6541c1] peer"
+                    placeholder=""
+                    required
+                  />
+                  <label
+                    for="employees"
+                    class="absolute text-sm text-[#020E1E] duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#020E1E] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                    >Number of Employees
+                    <sup class="text-red-600">*</sup></label
+                  >
                 </div>
 
                 <div class="flex flex-col justify-center items-center">
